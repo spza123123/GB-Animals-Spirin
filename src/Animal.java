@@ -1,12 +1,14 @@
 import java.time.LocalDate;
 import java.util.List;
 
-public class Animal {
+public abstract class Animal {
     private String name;
     private LocalDate birthday;
     private List<String> vaccinations;
     private String illness;
     private String ownerName;
+
+    protected static String type;
 
     public Animal(String name, LocalDate birthday, List<String> vaccinations, String illness, String ownerName) {
         this.name = name;
@@ -14,6 +16,7 @@ public class Animal {
         this.vaccinations = vaccinations;
         this.illness = illness;
         this.ownerName = ownerName;
+        this.type = getClass().getSimpleName();
     }
 
     public String getName() {
@@ -63,20 +66,9 @@ public class Animal {
     private void sleep() {
         System.out.println("Animal sleeping");
     }
-    public void lifeCycle() {
-        wakeUp();
-        eat();
-        play();
-        sleep();
-    }
-    public void toGo() {
-        //System.out.println("Animal can move");
-    }
-    public void fly() {
-        //System.out.println("Animal can fly ");
-    }
-    public void swim() {
-        //System.out.println("Animal can swim");
-    }
+    //public abstract void lifeCycle();
+
+
+
 
 }
